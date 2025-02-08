@@ -16,5 +16,12 @@ export default defineConfig({
       theme: 'monokai',
     },
   },
-  integrations: [react(), tailwind({}), sitemap(), robotsTxt()],
+  integrations: [
+    react(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    sitemap(),
+    robotsTxt(),
+  ],
 });
