@@ -1,7 +1,6 @@
 {
-  "name": "astro-boilerplate",
+  "name": "jangdu-blog",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -57,5 +56,5 @@
   "volta": {
     "node": "16.15.1"
   },
-  "author": "Ixartz (https://github.com/ixartz)"
+  "author": "Jangdu"
 }
