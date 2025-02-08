@@ -3,17 +3,17 @@ import '@/styles/globals.css';
 
 import { Footer } from '@/partials/Footer';
 import { Navbar } from '@/partials/Navbar';
-import { AppConfig } from '@/utils/AppConfig';
 
 export interface Props {
   head: {
     title: string;
     description: string;
+    author: string;
   };
 }
 
 const {
-  head: { title, description },
+  head: { title, description, author },
 } = Astro.props as Props;
 ---
 
@@ -23,7 +23,7 @@ const {
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>{title}</title>
     <meta name='description' content={description} />
-    <meta name='author' content={AppConfig.author} />
+    <meta name='author' content={author} />
 
     <link rel='alternate' type='application/rss+xml' href='/rss.xml' />
     <link rel='icon' type='image/x-icon' href='/favicon.ico' />
