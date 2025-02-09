@@ -6,6 +6,10 @@ import {
   Section,
 } from 'astro-boilerplate-components';
 
+import { AppConfig } from '@/utils/AppConfig';
+
+const siteName = AppConfig.site_name;
+
 const Navbar = () => (
   <Section>
     <NavbarTwoColumns>
@@ -13,7 +17,7 @@ const Navbar = () => (
         <Logo
           icon={
             <svg
-              className="mr-1 h-10 w-10 stroke-cyan-600"
+              className="mr-1 size-10 stroke-cyan-600"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
@@ -28,14 +32,15 @@ const Navbar = () => (
               <path d="M4 20h14"></path>
             </svg>
           }
-          name="Ixartz's Blog"
+          name={siteName}
         />
       </a>
 
       <NavMenu>
-        <NavMenuItem href="/posts/">Blogs</NavMenuItem>
-        <NavMenuItem href="/">GitHub</NavMenuItem>
-        <NavMenuItem href="/">Twitter</NavMenuItem>
+        <NavMenuItem href="/posts">Blogs</NavMenuItem>
+        <NavMenuItem href="https://github.com/jangdu" target="_blank">
+          GitHub
+        </NavMenuItem>
       </NavMenu>
     </NavbarTwoColumns>
   </Section>

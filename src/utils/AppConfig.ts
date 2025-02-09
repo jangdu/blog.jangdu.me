@@ -1,5 +1,5 @@
 export const AppConfig = {
-  site_name: 'jangdu-blog',
+  site_name: 'Jangdu Blog',
   title: 'Jangdu Blog',
   description: 'Jangdu Blog',
   author: 'Jangdu',
