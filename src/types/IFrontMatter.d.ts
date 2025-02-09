@@ -5,4 +5,5 @@ export interface IFrontmatter {
   imgSrc: string;
   imgAlt: string;
   draft: boolean;
+  tags?: string[];
 }

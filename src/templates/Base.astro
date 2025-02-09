@@ -1,6 +1,7 @@
 ---
 import '@/styles/globals.css';
 
+import { ModeToggle } from '@/components/ModeToggle';
 import { Footer } from '@/partials/Footer';
 import { Navbar } from '@/partials/Navbar';
 
@@ -17,7 +18,7 @@ const {
 } = Astro.props as Props;
 ---
 
-<html lang='en'>
+<html lang='ko'>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
@@ -27,11 +28,36 @@ const {
 
     <link rel='alternate' type='application/rss+xml' href='/rss.xml' />
     <link rel='icon' type='image/x-icon' href='/favicon.ico' />
-  </head>
-  <body class='bg-slate-900 text-gray-100'>
-    <Navbar />
+    <script is:inline>
+      const theme = (() => {
+        if (
+          typeof localStorage !== 'undefined' &&
+          localStorage.getItem('theme')
+        ) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      })();
 
-    <slot></slot>
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+      window.localStorage.setItem('theme', theme);
+    </script>
+  </head>
+  <body class='bg-white text-black dark:bg-black dark:text-white'>
+    <Navbar>
+      <ModeToggle client:load />
+    </Navbar>
+
+    <div class='mx-auto max-w-screen-md'>
+      <slot></slot>
+    </div>
 
     <Footer />
   </body>

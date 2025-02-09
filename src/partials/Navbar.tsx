@@ -1,7 +1,6 @@
 import {
   Logo,
   NavbarTwoColumns,
-  NavMenu,
   NavMenuItem,
   Section,
 } from 'astro-boilerplate-components';
@@ -10,7 +9,11 @@ import { AppConfig } from '@/utils/AppConfig';
 
 const siteName = AppConfig.site_name;
 
-const Navbar = () => (
+type NavbarProps = {
+  children?: React.ReactNode;
+};
+
+const Navbar = ({ children }: NavbarProps) => (
   <Section>
     <NavbarTwoColumns>
       <a href="/">
@@ -36,12 +39,13 @@ const Navbar = () => (
         />
       </a>
 
-      <NavMenu>
+      <div className="flex flex-row items-center gap-2">
         <NavMenuItem href="/posts">Blogs</NavMenuItem>
         <NavMenuItem href="https://github.com/jangdu" target="_blank">
           GitHub
         </NavMenuItem>
-      </NavMenu>
+        {children}
+      </div>
     </NavbarTwoColumns>
   </Section>
 );
