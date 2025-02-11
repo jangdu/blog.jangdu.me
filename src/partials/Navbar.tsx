@@ -1,11 +1,9 @@
-import {
-  Logo,
-  NavbarTwoColumns,
-  NavMenuItem,
-  Section,
-} from 'astro-boilerplate-components';
+import { NavbarTwoColumns } from 'astro-boilerplate-components';
 import { CodeXml } from 'lucide-react';
 
+import { Logo } from '@/components/Logo';
+import { Link } from '@/components/partials/Link';
+import { NavbarContainer } from '@/container/navbar/NavbarContainer';
 import { AppConfig } from '@/utils/AppConfig';
 
 const siteName = AppConfig.site_name;
@@ -15,24 +13,24 @@ type NavbarProps = {
 };
 
 const Navbar = ({ children }: NavbarProps) => (
-  <Section>
+  <NavbarContainer>
     <NavbarTwoColumns>
       <a href="/">
         <Logo
-          icon={<CodeXml className="me-2 size-10 text-primary" />}
+          icon={<CodeXml className="size-8 text-primary " />}
           name={siteName}
         />
       </a>
 
       <div className="flex flex-row items-center gap-2">
-        <NavMenuItem href="/posts">Blogs</NavMenuItem>
-        <NavMenuItem href="https://github.com/jangdu" target="_blank">
+        <Link href="/posts">Blogs</Link>
+        <Link href="https://github.com/jangdu" target="_blank">
           GitHub
-        </NavMenuItem>
+        </Link>
         {children}
       </div>
     </NavbarTwoColumns>
-  </Section>
+  </NavbarContainer>
 );
 
 export { Navbar };
