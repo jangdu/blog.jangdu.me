@@ -2,8 +2,8 @@ import { NavbarTwoColumns } from 'astro-boilerplate-components';
 import { CodeXml } from 'lucide-react';
 
 import { Logo } from '@/components/Logo';
-import { Link } from '@/components/partials/Link';
 import { NavbarContainer } from '@/container/navbar/NavbarContainer';
+import { Link } from '@/partials/Link';
 import { AppConfig } from '@/utils/AppConfig';
 
 const siteName = AppConfig.site_name;
