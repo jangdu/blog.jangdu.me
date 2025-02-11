@@ -12,7 +12,7 @@ export const Link = ({
   className,
 }: LinkProps) => {
   const linkClassName =
-    className ?? 'text-foreground text-sm hover:underline p-2';
+    className ?? 'text-foreground text-sm hover:underline rounded-md';
 
   return (
     <a href={href} target={target} className={linkClassName}>
