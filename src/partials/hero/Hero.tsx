@@ -1,10 +1,7 @@
 import { Section } from 'astro-boilerplate-components';
-import { Github } from 'lucide-react';
 
-import { Button } from '@/components/ui/button';
 import { AppConfig } from '@/utils/AppConfig';
 
-import { Link } from '../Link';
 import { HeroContainer } from './HeroContainer';
 
 const Hero = () => {
@@ -21,15 +18,8 @@ const Hero = () => {
             loading="lazy"
           />
         }
-        socialButtons={
-          <>
-            <Link href="https://github.com/jangdu" target="_blank">
-              <Button variant="ghost" size="icon">
-                <Github />
-              </Button>
-            </Link>
-          </>
-        }
+        email="jjd0324@gmail.com"
+        githubUrl="https://github.com/jangdu"
       />
     </Section>
   );
