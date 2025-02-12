@@ -6,7 +6,8 @@ import type { IFrontmatter } from '@/types/IFrontMatter';
 import { AppConfig } from '@/utils/AppConfig';
 import { sortByDate } from '@/utils/Posts';
 
-const allPosts = await Astro.glob<IFrontmatter>('../posts/*.md');
+const allPosts = await Astro.glob<IFrontmatter>('./posts/*.md');
+
 const sortedPosts = sortByDate(allPosts);
 ---
 

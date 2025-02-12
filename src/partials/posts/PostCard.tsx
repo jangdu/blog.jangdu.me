@@ -2,6 +2,8 @@ import type { MarkdownInstance } from 'astro';
 
 import type { IFrontmatter } from '@/types/IFrontMatter';
 
+import { Link } from '../Link';
+
 type IPostCardProps = {
   post: MarkdownInstance<IFrontmatter>;
 };
@@ -20,9 +22,11 @@ const PostCard = (props: IPostCardProps) => {
   return (
     <div className="flex flex-col gap-4 border-b p-4">
       <div className="flex flex-col gap-2">
-        <h2 className="scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0">
-          {title}
-        </h2>
+        <Link href={`${post.url}`}>
+          <h2 className="scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0">
+            {title}
+          </h2>
+        </Link>
         <p>{description}</p>
       </div>
       <div className="flex flex-col gap-2">
