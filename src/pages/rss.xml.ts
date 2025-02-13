@@ -1,20 +1,20 @@
-import rss from '@astrojs/rss';
+import rss from "@astrojs/rss";
+import { getCollection } from "astro:content";
+import getSortedPosts from "@utils/getSortedPosts";
+import { SITE } from "@config";
 
-import { AppConfig } from '@/utils/AppConfig';
-
-export const get = () =>
-  rss({
-    // `<title>` field in output xml
-    title: AppConfig.title,
-    // `<description>` field in output xml
-    description: AppConfig.description,
-    // base URL for RSS <item> links
-    // SITE will use "site" from your project's astro.config.
-    site: import.meta.env.SITE,
-    // list of `<item>`s in output xml
-    // simple example: generate items for every md file in /src/pages
-    // see "Generating items" section for required frontmatter and advanced use cases
-    items: import.meta.glob('./**/*.md'),
-    // (optional) inject custom xml
-    customData: `<language>en-us</language>`,
+export async function GET() {
+  const posts = await getCollection("blog");
+  const sortedPosts = getSortedPosts(posts);
+  return rss({
+    title: SITE.title,
+    description: SITE.desc,
+    site: SITE.website,
+    items: sortedPosts.map(({ data, slug }) => ({
+      link: `posts/${slug}/`,
+      title: data.title,
+      description: data.description,
+      pubDate: new Date(data.modDatetime ?? data.pubDatetime),
+    })),
   });
+}
