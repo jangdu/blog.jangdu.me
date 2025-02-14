@@ -1,7 +1,7 @@
 ---
 author: jangdu
 pubDatetime: 2024-09-21T02:46:00Z
-modDatetime: 2024-09-21T02:46:00Z
+modDatetime: 2025-02-14T02:46:00Z
 title: aws lambda nodejs 배포
 slug: aws-lambda-nodejs
 featured: false
