@@ -1,5 +1,6 @@
 ---
 import Breadcrumbs from "@components/Breadcrumbs.astro";
+import Hr from "@components/Hr.astro";
 
 interface StringTitleProp {
   pageTitle: string;
@@ -32,6 +33,7 @@ const { props } = Astro;
     )
   }
   <p>{props.pageDesc}</p>
+  <Hr noPadding />
   <slot />
 </main>
 
@@ -43,6 +45,6 @@ const { props } = Astro;
     @apply text-2xl font-semibold sm:text-3xl;
   }
   #main-content p {
-    @apply mb-6 mt-2 italic;
+    @apply mb-6 mt-2;
   }
 </style>

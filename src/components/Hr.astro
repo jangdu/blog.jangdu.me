@@ -2,11 +2,12 @@
 export interface Props {
   noPadding?: boolean;
   ariaHidden?: boolean;
+  dashed?: boolean;
 }
 
-const { noPadding = false, ariaHidden = true } = Astro.props;
+const { noPadding = false, ariaHidden = true, dashed = false } = Astro.props;
 ---
 
 <div class={`max-w-3xl mx-auto ${noPadding ? "px-0" : "px-4"}`}>
-  <hr class="border-skin-line" aria-hidden={ariaHidden} />
+  <hr class={`${dashed ? "border-dashed" : ""}`} aria-hidden={ariaHidden} />
 </div>
