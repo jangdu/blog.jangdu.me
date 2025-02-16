@@ -9,10 +9,10 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   <div class="flex items-center gap-4">
     <img src="/avatar.png" alt="Profile" />
     <div class="flex flex-col gap-2">
-      <div class="flex flex-row gap-2">
-        <p>{`@${SITE.author} | jjd0324@gmail.com`}</p>
+      <div class="text flex flex-row gap-2">
+        {`@${SITE.author} | jjd0324@gmail.com`}
       </div>
-      <p>typescript developer</p>
+      <p>typescript 개발자 장두혁입니다.</p>
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
@@ -28,6 +28,9 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 <style>
   #hero {
     @apply flex flex-col items-center justify-center;
+  }
+  #hero p {
+    @apply opacity-80;
   }
   #hero img {
     @apply h-28 w-28 rounded-full;
