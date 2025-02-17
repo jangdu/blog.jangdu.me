@@ -14,7 +14,7 @@ export const SITE: Site = {
   showArchives: false,
   editPost: {
     url: "https://github.com/jangdu/blog.jangdu.me/edit/main/src/content/blog",
-    text: "Suggest Changes",
+    text: "수정",
     appendFilePath: true,
   },
 };
