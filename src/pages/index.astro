@@ -19,10 +19,13 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
 <Layout>
   <Header />
+
   <main id="main-content">
     <div class="my-8">
       <Hero />
     </div>
+
+    <Hr />
 
     {
       featuredPosts.length > 0 && (
@@ -83,7 +86,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   /* ===== Featured & Recent Posts Sections ===== */
   #featured,
   #recent-posts {
-    @apply py-6;
+    @apply py-8;
   }
   #featured h2,
   #recent-posts h2 {

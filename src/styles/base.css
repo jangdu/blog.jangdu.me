@@ -5,19 +5,19 @@
 @layer base {
   :root,
   html[data-theme="light"] {
-    --color-fill: 250, 252, 252;
+    --color-fill: 255, 255, 255;
     --color-text-base: 34, 46, 54;
     --color-accent: 211, 0, 106;
     --color-card: 225, 225, 225;
-    --color-card-muted: 241, 186, 212;
+    --color-card-muted: 220, 221, 222; /* 조금 더 어둡게 변경했습니다. */
     --color-border: 227, 169, 198;
   }
   html[data-theme="dark"] {
     --color-fill: 40, 42, 50; /* 색상을 조금 더 어둡게 설정했습니다. */
     --color-text-base: 233, 237, 241;
     --color-accent: 255, 120, 200;
-    --color-card: 75, 76, 89;
-    --color-card-muted: 113, 85, 102;
+    --color-card: 60, 61, 74; /* 조금 더 어둡게 그레이 계열로 변경했습니다. */
+    --color-card-muted: 200, 200, 200; /* 그레이 계열로 변경했습니다. */
     --color-border: 134, 67, 107;
   }
 
@@ -46,7 +46,7 @@
     @apply inline-block h-6 w-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110;
   }
   .prose {
-    @apply prose-headings:!mb-3 prose-headings:!text-skin-base prose-h3:italic prose-p:!text-skin-base prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-8 hover:prose-a:text-skin-accent prose-blockquote:!border-l-skin-accent/50 prose-blockquote:opacity-80 prose-figcaption:!text-skin-base prose-figcaption:opacity-70 prose-strong:!text-skin-base prose-code:rounded prose-code:bg-skin-card/75 prose-code:p-1 prose-code:before:!content-none prose-code:after:!content-none prose-ol:!text-skin-base prose-ul:overflow-x-clip prose-ul:!text-skin-base prose-li:marker:!text-skin-accent prose-table:text-skin-base prose-th:border prose-th:border-skin-line prose-td:border prose-td:border-skin-line prose-img:!my-2 prose-img:mx-auto prose-img:border-2 prose-img:border-skin-line prose-hr:!border-skin-line;
+    @apply prose-headings:!mb-3 prose-headings:!text-skin-base prose-p:!text-skin-base prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-8 hover:prose-a:text-skin-accent prose-blockquote:!border-l-skin-accent/50 prose-blockquote:opacity-80 prose-figcaption:!text-skin-base prose-figcaption:opacity-70 prose-strong:!text-skin-base prose-code:rounded prose-code:bg-skin-card/75 prose-code:p-1 prose-code:before:!content-none prose-code:after:!content-none prose-ol:!text-skin-base prose-ul:overflow-x-clip prose-ul:!text-skin-base prose-li:marker:!text-skin-accent prose-table:text-skin-base prose-th:border prose-th:border-skin-line prose-td:border prose-td:border-skin-line prose-img:!my-2 prose-img:mx-auto prose-img:border-2 prose-img:border-skin-fill prose-hr:!border-skin-fill;
   }
   .prose a {
     @apply break-words hover:!text-skin-accent;
@@ -67,6 +67,9 @@
   }
   .prose h2#table-of-contents + p {
     @apply hidden;
+  }
+  .prose hr {
+    @apply border-skin-fill;
   }
 
   /* ===== scrollbar ===== */
@@ -96,7 +99,7 @@
 
   /* ===== Code Blocks & Syntax Highlighting ===== */
   pre:has(code) {
-    @apply border border-skin-line;
+    @apply border border-skin-fill;
   }
   code,
   blockquote {

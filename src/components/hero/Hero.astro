@@ -12,7 +12,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       <div class="text flex flex-row gap-2">
         {`@${SITE.author} | jjd0324@gmail.com`}
       </div>
-      <p>typescript 개발자 장두혁입니다.</p>
+      <p>안녕하세요, typescript 개발자 장두혁입니다.</p>
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
@@ -27,7 +27,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 
 <style>
   #hero {
-    @apply flex flex-col items-center justify-center;
+    @apply flex flex-col items-start justify-center;
   }
   #hero p {
     @apply opacity-80;

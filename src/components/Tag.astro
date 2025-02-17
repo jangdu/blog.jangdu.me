@@ -16,7 +16,7 @@ const { tag, tagName, size = "sm" } = Astro.props;
   <a
     href={`/tags/${tag}/`}
     transition:name={tag}
-    class={`${size === "sm" ? "text-sm" : "text-lg"} pr-2 group`}
+    class={`${size === "sm" ? "" : "text-lg underline"} pr-2 group`}
   >
     <span>{`#${tagName}`}</span>
   </a>
@@ -24,7 +24,7 @@ const { tag, tagName, size = "sm" } = Astro.props;
 
 <style>
   a {
-    @apply relative underline decoration-wavy hover:-top-0.5 hover:text-skin-accent focus-visible:p-1;
+    @apply relative decoration-wavy hover:-top-0.5 hover:text-skin-accent focus-visible:p-1;
   }
   a svg {
     @apply -mr-5 h-6 w-6 scale-95 text-skin-base opacity-80 group-hover:fill-skin-accent;

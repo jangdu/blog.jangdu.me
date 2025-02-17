@@ -6,9 +6,9 @@ import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
-import ShareLinks from "@components/ShareLinks.astro";
 import { SITE } from "@config";
 import EditPost from "@components/post/EditPost";
+import Hero from "@components/hero/Hero.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -65,9 +65,11 @@ const nextPost =
 <Layout {...layoutProps}>
   <Header />
 
-  <div class="mx-auto flex w-full max-w-3xl items-center justify-between px-2">
+  <div
+    class="mx-auto my-8 mb-2 flex w-full max-w-3xl items-center justify-between px-2"
+  >
     <button
-      class="focus-outline flex hover:opacity-75"
+      class="focus-outline flex items-center hover:opacity-75"
       onclick="(() => (history.length === 1) ? window.location = '/' : history.back())()"
     >
       <svg xmlns="http://www.w3.org/2000/svg"
@@ -90,17 +92,19 @@ const nextPost =
       editPost={editPost}
       postId={post.id}
     />
+
+    <hr class="my-8 border-dashed" />
+
     <article id="article" class="prose mx-auto mt-8 max-w-3xl">
       <Content />
     </article>
 
-    <ul class="my-8">
-      {tags.map(tag => <Tag tag={slugifyStr(tag)} tagName={tag} />)}
-    </ul>
-
     <div
-      class="flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4"
+      class="mx-auto mb-2 mt-8 flex w-full max-w-3xl flex-row items-center justify-between gap-6"
     >
+      <ul>
+        {tags.map(tag => <Tag tag={slugifyStr(tag)} tagName={tag} />)}
+      </ul>
       <button
         id="back-to-top"
         class="focus-outline whitespace-nowrap py-1 hover:opacity-75"
@@ -110,22 +114,21 @@ const nextPost =
             d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
           ></path>
         </svg>
-        <span>Back to Top</span>
+        <span>Top</span>
       </button>
-
-      <ShareLinks />
     </div>
 
-    <hr class="my-6 border-dashed" />
+    <hr class="border-dashed" />
+
+    <div class="my-8">
+      <Hero />
+    </div>
 
     <!-- Previous/Next Post Buttons -->
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
       {
         prevPost && (
-          <a
-            href={`/posts/${prevPost.slug}`}
-            class="flex w-full gap-1 hover:opacity-75"
-          >
+          <a href={`/posts/${prevPost.slug}`} class="bottom-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -142,8 +145,8 @@ const nextPost =
               <path d="M15 6l-6 6l6 6" />
             </svg>
             <div>
-              <span>Previous Post</span>
-              <div class="text-sm text-skin-accent/85">{prevPost.title}</div>
+              <span class="text-xs">Previous Post</span>
+              <div>{prevPost.title}</div>
             </div>
           </a>
         )
@@ -152,11 +155,11 @@ const nextPost =
         nextPost && (
           <a
             href={`/posts/${nextPost.slug}`}
-            class="flex w-full justify-end gap-1 text-right hover:opacity-75 sm:col-start-2"
+            class="bottom-button justify-end text-right sm:col-start-2"
           >
             <div>
-              <span>Next Post</span>
-              <div class="text-sm text-skin-accent/85">{nextPost.title}</div>
+              <span class="text-xs">Next Post</span>
+              <div>{nextPost.title}</div>
             </div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -187,6 +190,9 @@ const nextPost =
   }
   .post-title {
     @apply text-3xl font-semibold text-skin-base;
+  }
+  .bottom-button {
+    @apply flex w-full items-center gap-1 rounded-lg p-3 transition-all duration-200 hover:bg-skin-card;
   }
 </style>
 
