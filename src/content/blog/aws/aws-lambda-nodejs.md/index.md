@@ -26,7 +26,7 @@ AWS의 경우, CloudFormation 선언을 생성하고 해당 생성된 파일로 
 
 ### serverless.yml 예시
 
-```
+```yml
 service: node-serverless
 
 provider:
@@ -62,7 +62,7 @@ functions:
 
 아래 명령어를 통해 serverless를 설치합니다.
 
-```
+```bash
 npm install -g serverless
 ```
 
@@ -70,7 +70,7 @@ npm install -g serverless
 
 Project를 만들 디렉토리내에서 다음 명령어로 serverless project를 만들어줍니다.
 
-```
+```bash
 sls
 
 # or
@@ -83,7 +83,7 @@ serverless
 
 나머지 질문들은 각 Project와 App의 이름을 입력합니다.
 
-```
+```bash
 ✔ Select A Template: · AWS / Node.js / Simple Function
 
 ✔ Name Your Project: · yourProjectName
@@ -101,13 +101,13 @@ serverless
 
 여기서 `serverless.yml`의 경우에는 위에서 살펴봤으므로 넘어가고 `handler.js`를 살펴보면 다음과 같습니다.
 
-```
-exports.hello = async (event) => {
+```javascript
+exports.hello = async event => {
   return {
     statusCode: 200,
     body: JSON.stringify({
-      message: 'Go Serverless v4.0! Your function executed successfully!'
-    })
+      message: "Go Serverless v4.0! Your function executed successfully!",
+    }),
   };
 };
 ```
@@ -122,7 +122,7 @@ exports.hello = async (event) => {
 
 `Serverless Framework`를 사용하면 상당히 간편하게 배포가 가능합니다. 아래 명령어를 사용하여 배포하면 됩니다.
 
-```
+```bash
 sls deploy
 
 Deploying "hello" to stage "dev" (ap-northeast-2)
@@ -163,7 +163,7 @@ functions:
 
 아래의 명령어를 사용하면 `serverless project`를 삭제할 수 있습니다.
 
-```
+```bash
 sls remove
 ```
 
