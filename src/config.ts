@@ -1,14 +1,14 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://blog.jangdu.me", // replace this with your deployed domain
+  website: "https://dev.jangdu.me", // replace this with your deployed domain
   author: "jangdu",
-  profile: "https://blog.jangdu.me",
+  profile: "https://dev.jangdu.me",
   desc: "typescript developer jangdu's blog",
   title: "blog.jangdu",
   ogImage: "og.png",
   lightAndDarkMode: true,
-  postPerIndex: 4,
+  postPerIndex: 5,
   postPerPage: 10,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: false,

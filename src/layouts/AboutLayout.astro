@@ -4,6 +4,7 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import Layout from "./Layout.astro";
+import Hero from "@components/hero/Hero.astro";
 
 export interface Props {
   frontmatter: {
@@ -21,6 +22,7 @@ const { frontmatter } = Astro.props;
   <main id="main-content">
     <section id="about" class="prose mb-28 max-w-3xl prose-img:border-0">
       <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
+      <Hero />
       <slot />
     </section>
   </main>
