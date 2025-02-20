@@ -9,7 +9,7 @@ export const SITE: Site = {
   ogImage: "og.png",
   lightAndDarkMode: true,
   postPerIndex: 5,
-  postPerPage: 10,
+  postPerPage: 7,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: false,
   editPost: {
