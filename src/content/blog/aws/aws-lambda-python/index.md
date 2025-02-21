@@ -22,7 +22,7 @@ python 코드를 text로 받아 파싱 후 실행한 결과를 response로 보�
 람다 함수에서 python 컨테이너 이미지를 빌드해 배포하는 방법은 3가지가 있는데, 이 글에서는 Lambda 전용 컨테이너 이미지를 CLI를 통해 빌드 후 ECR로 이미지를 배포하는 방법에 대해서만 다루겠습니다.
 
 aws에서는 python Container를 v3.8 ~ v3.12까지 지원합니다.  
-그 이후의 버전의 이미지는 [AWS Minimal container image](!https://docs.aws.amazon.com/linux/al2023/ug/minimal-container.html)를 기반으로 사용합니다. 자세한 내용은 해당 링크를 통해서 살펴볼 수 있습니다.
+그 이후의 버전의 이미지는 [AWS Minimal container image](https://docs.aws.amazon.com/linux/al2023/ug/minimal-container.html)를 기반으로 사용합니다. 자세한 내용은 해당 링크를 통해서 살펴볼 수 있습니다.
 
 저는 이번에는 `v3.12`를 사용해서 빌드하겠습니다.
 
@@ -32,7 +32,7 @@ aws에서는 python Container를 v3.8 ~ v3.12까지 지원합니다.
 
 배포를 위해 필요한 파일은 다음과 같습니다. (`.gitignore`는 무시하셔도 괜찮습니다.)
 
-[##_Image|kage@c950xe/btsHlL2jqt2/B70U90hTY42tav5VSwikkk/img.png|CDM|1.3|{"originWidth":458,"originHeight":324,"style":"alignCenter"}_##]
+![image](@assets/images/aws-lambda-python/img-1.png)
 
 ### lambda_function.py 작성
 
