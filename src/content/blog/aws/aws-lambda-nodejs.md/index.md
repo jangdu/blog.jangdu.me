@@ -97,7 +97,7 @@ serverless
 
 정상적으로 프로젝트가 생성되면 아래의 구조로 파일이 만들어집니다.
 
-![image](https://github.com/jangdu/blog.jangdu.me/src/content/blog/aws/aws-lambda-nodejs/image-1.png)
+![image](@assets/images/aws-lambda-nodejs/img-1.png)
 
 여기서 `serverless.yml`의 경우에는 위에서 살펴봤으므로 넘어가고 `handler.js`를 살펴보면 다음과 같습니다.
 
@@ -138,13 +138,13 @@ functions:
 
 만들어진 endpoint에 요청해서 배포가 잘 이루어졌는지 확인해보겠습니다.
 
-![image](https://github.com/jangdu/blog.jangdu.me/src/content/blog/aws/aws-lambda-nodejs/image-2.png)
+![image](@assets/images/aws-lambda-nodejs/img-2.png)
 
 ## AWS console 확인
 
 `AWS Console`에 접속해 lambda를 확인해보면 다음과 같이 함수와 트리거가 생성된것을 확인 할 수 있습니다.
 
-![image](https://github.com/jangdu/blog.jangdu.me/src/content/blog/aws/aws-lambda-nodejs/image-3.png)
+![image](@assets/images/aws-lambda-nodejs/img-3.png)
 
 여기서 주의 할 점은 `Lambda`에서 사용 할 코드는 압축을 해제하고의 용량을 기준으로 **_250MB_**까지만 가능합니다.
 
