@@ -22,7 +22,7 @@ react-native run-ios
 위 명령어를 통해서 프로젝트를 실행하게되면, ios 시뮬레이터가 자동으로 켜지면서 해당 프로젝트가 시뮬레이터 내부에서 실행되어야하지만,  
 다음과 같은 에러가 나오면서 빌드를 실패했다는 메시지를 띄우고 시뮬레이터에서 실행하지 않는 문제가 발생했습니다.
 
-[##_Image|kage@k2nIl/btsGS33jOyU/DpW7JoyDcqgpgGksoB3NQ0/img.png|CDM|1.3|{"originWidth":1904,"originHeight":430,"style":"alignCenter"}_##]
+![image](@assets/images/react-native-build-err/img-1.png)
 
 직접적으로 XCode에 들어가서 project의 파일을 가져와서 react-native ios 시뮬레이터를 실행하면 잘 작동하지만, 귀찮은 과정을 최소화하고 더 간단하게 구성해봅시다.
 
