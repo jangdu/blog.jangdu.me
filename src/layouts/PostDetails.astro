@@ -9,6 +9,7 @@ import { slugifyStr } from "@utils/slugify";
 import { SITE } from "@config";
 import EditPost from "@components/post/EditPost";
 import Hero from "@components/hero/Hero.astro";
+import PostComments from "@components/comment/PostComments";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -180,24 +181,7 @@ const nextPost =
       }
     </div>
 
-    <div id="comment-container">
-      <script
-        src="https://giscus.app/client.js"
-        data-repo="jangdu/blog.jangdu.me"
-        data-repo-id="R_kgDON2YpWA"
-        data-category="Blog Post Comments"
-        data-category-id="DIC_kwDON2YpWM4CnWmn"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="ko"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async></script>
-    </div>
+    <PostComments />
   </main>
   <Footer />
 </Layout>
@@ -211,10 +195,6 @@ const nextPost =
   }
   .bottom-button {
     @apply flex w-full items-center gap-1 rounded-lg p-3 transition-all duration-200 hover:bg-skin-card-muted;
-  }
-
-  #comment-container {
-    @apply mx-auto my-8 w-full;
   }
 </style>
 
