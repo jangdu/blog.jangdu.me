@@ -1,28 +1,49 @@
 <div id="giscuss-container" class="mx-auto mt-12 w-full"></div>
 
 <script>
-  const script = document.createElement("script");
-  const container = document.querySelector("#giscuss-container");
+  const loadGiscus = () => {
+    const existingScript = document.querySelector(
+      'script[src="https://giscus.app/client.js"]'
+    );
 
-  Object.entries({
-    src: "https://giscus.app/client.js",
-    "data-repo": "jangdu/blog.jangdu.me",
-    "data-repo-id": "R_kgDON2YpWA",
-    "data-category": "Blog Post Comments",
-    "data-category-id": "DIC_kwDON2YpWM4CnWmn",
-    "data-mapping": "pathname",
-    "data-strict": "0",
-    "data-reactions-enabled": "1",
-    "data-emit-metadata": "1",
-    "data-input-position": "top",
-    "data-theme": "dark",
-    "data-lang": "en",
-    "data-loading": "lazy",
-    crossorigin: "anonymous",
-  }).forEach(([key, value]) => {
-    script.setAttribute(key, value);
-  });
-  script.setAttribute("async", "true");
+    if (existingScript) {
+      existingScript.remove();
+    }
 
-  container?.appendChild(script);
+    const script = document.createElement("script");
+    const container = document.querySelector("#giscuss-container");
+
+    if (container) {
+      container.innerHTML = "";
+    }
+
+    Object.entries({
+      src: "https://giscus.app/client.js",
+      "data-repo": "jangdu/blog.jangdu.me",
+      "data-repo-id": "R_kgDON2YpWA",
+      "data-category": "Blog Post Comments",
+      "data-category-id": "DIC_kwDON2YpWM4CnWmn",
+      "data-mapping": "pathname",
+      "data-strict": "0",
+      "data-reactions-enabled": "1",
+      "data-emit-metadata": "1",
+      "data-input-position": "top",
+      "data-theme": "dark",
+      "data-lang": "ko",
+      "data-loading": "lazy",
+      crossorigin: "anonymous",
+    }).forEach(([key, value]) => {
+      script.setAttribute(key, value);
+    });
+    script.setAttribute("async", "true");
+
+    container?.appendChild(script);
+  };
+
+  // 페이지 로드 시 giscus 로드
+  loadGiscus();
+
+  // Astro의 view transitions 후에도 giscus 다시 로드
+  document.addEventListener("astro:page-load", loadGiscus);
+  document.addEventListener("astro:after-swap", loadGiscus);
 </script>
