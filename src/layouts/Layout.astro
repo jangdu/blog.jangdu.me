@@ -26,7 +26,7 @@ const {
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
   pubDatetime,
   modDatetime,
-  scrollSmooth = false,
+  scrollSmooth = true,
 } = Astro.props;
 
 const socialImageURL = new URL(
@@ -137,13 +137,13 @@ const structuredData = {
         <script
           type="text/partytown"
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-3ZK2V0X0EH"></script>
+          src="https://www.googletagmanager.com/gtag/js?id=G-MZ82T6MHF4"></script>
         <script type="text/partytown">
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag("config", "G-3ZK2V0X0EH");
+          gtag("config", "G-MZ82T6MHF4");
         </script>
       </>
     )}
