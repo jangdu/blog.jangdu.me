@@ -1,5 +1,6 @@
 ---
 import Breadcrumbs from "@components/Breadcrumbs.astro";
+import Hero from "@components/hero/Hero.astro"
 import Hr from "@components/Hr.astro";
 
 interface StringTitleProp {
@@ -32,7 +33,10 @@ const { props } = Astro;
       <h1>{props.pageTitle}</h1>
     )
   }
-  <p>{props.pageDesc}</p>
+  <!--<p>{props.pageDesc}</p>-->
+  <div id="hero-container">
+    <Hero />
+  </div>
   <slot />
 </main>
 
@@ -45,5 +49,8 @@ const { props } = Astro;
   }
   #main-content p {
     @apply mb-6 mt-2;
+  }
+  #hero-container {
+      @apply my-8;
   }
 </style>
